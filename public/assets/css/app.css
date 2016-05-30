@@ -1,0 +1,218 @@
+* {
+  box-sizing: border-box; }
+
+body {
+  background: #f0f0f0;
+  font-family: "Source Sans Pro", sans-serif; }
+
+html, body {
+  min-height: 100%;
+  -webkit-font-smoothing: antialiased; }
+
+b, strong {
+  font-weight: bold; }
+
+.clear {
+  clear: both; }
+
+.header-left {
+  padding: 0 0 0 10px;
+  float: left; }
+
+.header-right {
+  padding: 0 10px 0 0;
+  float: right; }
+
+.button {
+  padding: 5px;
+  display: inline-block;
+  background: rgba(63, 107, 135, 0.9);
+  line-height: normal;
+  border: none;
+  text-decoration: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  text-shadow: 0px 1px #000; }
+
+main {
+  height: 100%;
+  clear: both;
+  background: url(../img/bg.gif);
+  margin-top: -64px;
+  padding-top: 64px; }
+
+.sidebar {
+  width: 250px;
+  height: 100%;
+  overflow-y: auto;
+  float: left;
+  border-right: 1px solid black;
+  background: url(../img/bg_dark.gif); }
+
+.movie-list {
+  padding: 14px 0 0 0; }
+  .movie-list .showtime {
+    width: 100%;
+    line-height: normal; }
+
+movie {
+  display: block;
+  margin: 0 5px 5px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid black;
+  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12); }
+  movie md-input-container {
+    margin: 8px 0; }
+  movie .md-errors-spacer {
+    display: none; }
+
+.movie, .showtime {
+  width: 227px;
+  height: 40px;
+  padding: 0 5px;
+  border: 1px solid black;
+  font-size: 14px;
+  cursor: move;
+  position: relative;
+  display: table-cell;
+  vertical-align: middle;
+  background: #3f51b5;
+  color: #fff;
+  font-weight: bold; }
+  .movie:after, .showtime:after {
+    content: '>';
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%); }
+
+.halls {
+  width: 100px;
+  padding: 20px 0 0;
+  float: left; }
+  .halls__item {
+    height: 40px;
+    text-align: center;
+    border: 1px solid black; }
+    .halls__item small {
+      display: block; }
+
+.showtimes {
+  margin: 0 0 0 100px;
+  padding: 0 0 16px;
+  overflow-x: scroll;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
+.times {
+  height: 20px;
+  font-size: 0;
+  white-space: nowrap; }
+  .times__hour {
+    width: 120px;
+    height: 20px;
+    display: inline-block;
+    font-size: 12px;
+    background: url(../img/times__hour.gif) no-repeat; }
+
+hall-dropzone {
+  display: block;
+  height: 40px;
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 0;
+  border: 1px solid black;
+  border-left: none;
+  transition: 0.3s; }
+  hall-dropzone.dropzone-mod_active {
+    background: #b1c4ce url(../img/dropzone.gif) repeat-x; }
+  hall-dropzone .showtime {
+    line-height: normal; }
+    hall-dropzone .showtime:after {
+      display: none; }
+
+showtime {
+  overflow: hidden;
+  color: #fff;
+  background: rgba(63, 107, 135, 0.9);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  position: absolute;
+  z-index: 60; }
+  hall-dropzone showtime {
+    top: 0px !important; }
+  showtime .showtime {
+    float: left;
+    padding: 0;
+    border: 0;
+    text-overflow: ellipsis;
+    overflow: hidden; }
+    showtime .showtime b {
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      width: 80%;
+      overflow: hidden;
+      -ms-text-overflow: ellipsis;
+      text-overflow: ellipsis; }
+    showtime .showtime s {
+      position: absolute;
+      bottom: 3px;
+      left: 3px;
+      text-decoration: none; }
+    showtime .showtime em {
+      position: absolute;
+      bottom: 3px;
+      left: 50%; }
+    showtime .showtime i {
+      position: absolute;
+      bottom: 3px;
+      right: 3px; }
+    showtime .showtime span {
+      position: absolute;
+      top: 0;
+      right: 3px;
+      cursor: pointer; }
+      showtime .showtime span:before {
+        content: 'x';
+        font-family: Tahoma; }
+  showtime break {
+    background: rgba(236, 240, 243, 0.9);
+    color: #000;
+    border-left: 1px solid black;
+    float: left;
+    height: 40px;
+    line-height: 56px;
+    font-size: 12px;
+    cursor: ew-resize;
+    text-align: center; }
+
+.md-datepicker-calendar-pane * {
+  box-sizing: content-box; }
+
+md-toolbar md-datepicker {
+  background: transparent; }
+md-toolbar .md-toolbar-tools .md-button {
+  margin: 6px 8px; }
+md-toolbar .md-datepicker-input {
+  color: #fff; }
+
+.md-center {
+  left: 50%;
+  transform: translate3d(-50%, 0, 0);
+  text-align: center !important; }
+
+/*# sourceMappingURL=app.css.map */

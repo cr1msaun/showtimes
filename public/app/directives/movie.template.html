@@ -1,0 +1,18 @@
+<div class="movie">{{ name }}</div>
+<div class="movie-item__options">
+    <md-input-container md-no-float class="md-block">
+        <md-icon md-font-icon="fa-clock-o" class="fa fa-lg">
+            <md-tooltip>Хронометраж</md-tooltip>
+        </md-icon>
+        <input type="text" ng-model="duration" aria-label="Хронометраж">
+    </md-input-container>
+    <md-input-container md-no-float class="md-block">
+        <md-icon md-font-icon="fa-film" class="fa fa-lg">
+            <md-tooltip>Формат</md-tooltip>
+        </md-icon>
+        <md-select ng-model="format" aria-label="Формат">
+            <md-option selected value="2D">2D</md-option>
+            <md-option value="3D">3D</md-option>
+        </md-select>
+    </md-input-container>
+</div>

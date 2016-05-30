@@ -1,0 +1,24 @@
+.md-datepicker-calendar-pane * {
+  box-sizing: content-box;
+}
+
+md-toolbar {
+  md-datepicker {
+    background: transparent;
+  }
+
+  .md-toolbar-tools .md-button {
+    margin: 6px 8px;
+  }
+
+  .md-datepicker-input {
+    color: #fff;
+  }
+}
+
+//$mdToast center align
+.md-center {
+  left: 50%;
+  transform: translate3d(-50%, 0, 0);
+  text-align: center !important;
+}

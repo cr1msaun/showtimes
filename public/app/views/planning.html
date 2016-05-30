@@ -1,0 +1,60 @@
+<div class="sidebar">
+    <div class="movie-list" layout="column">
+        <movie ng-repeat="movie in planning.movies" m-id="{{ movie.id }}" name="{{ movie.name }}" duration="{{ movie.default_duration }}"></movie>
+
+        <md-button class="md-raised md-primary" ng-click="planning.showMovieForm()">
+            <md-icon md-font-set="fa" class="fa fa-lg fa-plus-circle"></md-icon>
+            Добавить фильм
+        </md-button>
+    </div>
+</div>
+<div class="content">
+    <div class="halls">
+        <hall ng-repeat="hall in planning.cinema.halls" h-id="{{ hall.id }}" name="{{ hall.name }}" seats-count="{{ hall.seats_count }}"></hall>
+    </div>
+    <div class="showtimes">
+        <div class="times">
+
+            <div class="times__hour">5:00</div>
+            <div class="times__hour">6:00</div>
+            <div class="times__hour">7:00</div>
+            <div class="times__hour">8:00</div>
+            <div class="times__hour">9:00</div>
+            <div class="times__hour">10:00</div>
+            <div class="times__hour">11:00</div>
+            <div class="times__hour">12:00</div>
+            <div class="times__hour">13:00</div>
+            <div class="times__hour">14:00</div>
+            <div class="times__hour">15:00</div>
+            <div class="times__hour">16:00</div>
+            <div class="times__hour">17:00</div>
+            <div class="times__hour">18:00</div>
+            <div class="times__hour">19:00</div>
+            <div class="times__hour">20:00</div>
+            <div class="times__hour">21:00</div>
+            <div class="times__hour">22:00</div>
+            <div class="times__hour">23:00</div>
+            <div class="times__hour">0:00</div>
+            <div class="times__hour">1:00</div>
+            <div class="times__hour">2:00</div>
+            <div class="times__hour">3:00</div>
+            <div class="times__hour">4:00</div>
+
+        </div>
+        <div class="dropzones">
+            <hall-dropzone ng-repeat="hall in planning.cinema.halls" hd-id="{{ hall.id }}">
+                <showtime ng-repeat="showtime in hall.showtimes"
+                          s-id="{{ showtime.id }}"
+                          m-id="{{ showtime.movie.id }}"
+                          name="{{ showtime.movie.name }}"
+                          duration="{{ showtime.movie.default_duration }}"
+                          format="{{ showtime.format }}"
+                          start-time="{{ showtime.start_time }}"
+                          end-time="{{ showtime.end_time }}"
+                          break="{{ showtime.break }}">
+                </showtime>
+            </hall-dropzone>
+        </div>
+    </div>
+</div>
+<div class="clear"></div>

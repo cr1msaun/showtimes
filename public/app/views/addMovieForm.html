@@ -1,0 +1,17 @@
+<md-bottom-sheet>
+    <form name="addMovieForm" novalidate layout="column" ng-submit="addMovie(newMovie)">
+        <h3>Добавить новый фильм</h3>
+
+        <md-input-container class="md-block">
+            <label>Название</label>
+            <input type="text" ng-model="newMovie.name" required>
+        </md-input-container>
+
+        <md-input-container class="md-block">
+            <label>Хронометраж</label>
+            <input type="number" ng-model="newMovie.duration" required>
+        </md-input-container>
+
+        <md-button type="submit" class="md-raised" ng-disabled="!addMovieForm.$valid">Добавить</md-button>
+    </form>
+</md-bottom-sheet>
