@@ -108,7 +108,7 @@ class DownloadController extends Controller
                 ]);
             });
 
-        })->store('xls', storage_path('../public/files'), true);
+        })->store('xls', storage_path('../public_html/files'), true);
 
         return response()->json($file['file']);
     }
