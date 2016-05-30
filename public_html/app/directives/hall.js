@@ -11,14 +11,14 @@
             scope: {
                 'hId': '@',
                 'name': '@',
-                'seatsCount': '@'
+                'note': '@'
             },
             link: function ($scope, element, attrs) {
                 
             },
             template: '<div class="halls__item">' +
                             '<span>{{ name }}</span>' +
-                            '<small>{{ seatsCount }} места</small>' +
+                            '<small>{{ note }}</small>' +
                       '</div>'
         };
     }
