@@ -16,10 +16,8 @@
             link: function ($scope, element, attrs) {
                 
             },
-            template: '<div class="halls__item">' +
-                            '<span>{{ name }}</span>' +
-                            '<small>{{ note }}</small>' +
-                      '</div>'
+            template: '<span>{{ name }}</span>' +
+                      '<small>{{ note }}</small>'
         };
     }
 

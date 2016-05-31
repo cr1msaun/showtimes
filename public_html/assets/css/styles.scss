@@ -1,5 +1,3 @@
-
-
 * {
   box-sizing: border-box;
 }
@@ -10,7 +8,6 @@ html {
 
 body {
   background: #f0f0f0;
-  font-family: "Source Sans Pro", sans-serif;
 }
 
 html, body {
@@ -29,7 +26,7 @@ b, strong {
 header {
   //height: 50px;
   //line-height: 50px;
-  //border: 1px solid black;
+  //border: 1px solid rgba(0,0,0,0.2);
   //background: #000;
   //color: #fff;
 }
@@ -74,8 +71,14 @@ main {
   height: 100%;
   overflow-y: auto;
   float: left;
-  border-right: 1px solid black;
+  border-right: 1px solid rgba(0,0,0,0.2);
   background: url(../img/bg_dark.gif);
+  position: relative;
+
+  md-bottom-sheet {
+    //padding-bottom: 0;
+    //transform: inherit;
+  }
 }
 
 .movie-list {
@@ -92,7 +95,7 @@ movie {
   margin: 0 5px 5px;
   padding: 5px;
   border-radius: 5px;
-  border: 1px solid black;
+  border: 1px solid rgba(0, 0, 0, 0.3);
   box-shadow: 0 2px 4px -1px rgba(0,0,0,.2),0 4px 5px 0 rgba(0,0,0,.14),0 1px 10px 0 rgba(0,0,0,.12);
 
   md-input-container {
@@ -109,7 +112,6 @@ movie {
   width: 227px;
   height: 40px;
   padding: 0 5px;
-  border: 1px solid black;
   font-size: 14px;
   cursor: move;
   position: relative;
@@ -141,15 +143,18 @@ movie {
   width: 100px;
   padding: 20px 0 0;
   float: left;
+}
 
-  &__item {
-    height: 40px;
-    text-align: center;
-    border: 1px solid black;
+hall {
+  display: flex;
+  height: 40px;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  border: 1px solid rgba(0,0,0,0.2);
 
-    small {
-      display: block;
-    }
+  small {
+    display: block;
   }
 }
 
@@ -184,7 +189,7 @@ hall-dropzone {
   overflow: hidden;
   white-space: nowrap;
   font-size: 0;
-  border: 1px solid black;
+  border: 1px solid rgba(0,0,0,0.2);
   border-left: none;
   transition: 0.3s;
 
@@ -269,7 +274,7 @@ showtime {
   break {
     background: rgba(236, 240, 243, 0.9);
     color: #000;
-    border-left: 1px solid black;
+    border-left: 1px solid rgba(0,0,0,0.2);
     float: left;
     height: 40px;
     line-height: 56px;
