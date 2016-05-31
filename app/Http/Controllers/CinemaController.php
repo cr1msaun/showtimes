@@ -56,21 +56,17 @@ class CinemaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id, Request $request)
+    public function show(Request $request, $id)
     {
+        $cinema = $request->user()->cinemas()->findOrFail($id);
+        $halls = $cinema->halls;
+
         $dateStart = $request->get('date');
 
         if (!$dateStart)
             $dateStart = date('Y-m-d');
 
         $dateEnd = date('Y-m-d', strtotime($dateStart . ' +1 day'));
-
-        $cinema = $request->user()->cinemas()
-            ->where('id', $id)
-            ->first();
-
-        
-        $halls = $cinema->halls;
 
         foreach ($halls as $hall) {
             $showtimes = $hall->showtimes()
