@@ -12,7 +12,11 @@
 */
 
 Route::get('/', 'HomeController@index');
-Route::get('/planning', 'AppController@index');
+
+Route::group(['prefix' => 'planning'], function () {
+    Route::get('/', 'AppController@index');
+    Route::get('{any}', 'AppController@index')->where('any', '(.*)'); // pass a link to the Angular ui-router
+});
 
 Route::resource('cinema', 'CinemaController');
 Route::resource('hall', 'HallController');
