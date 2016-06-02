@@ -24,38 +24,11 @@ b, strong {
 }
 
 header {
-  //height: 50px;
-  //line-height: 50px;
-  //border: 1px solid rgba(0,0,0,0.2);
-  //background: #000;
-  //color: #fff;
-}
-
-.header-left {
-  padding: 0 0 0 10px;
-  float: left;
-}
-
-.header-right {
-  padding: 0 10px 0 0;
-  float: right;
-}
-
-.date-selector {
 
 }
 
-.button {
-  padding: 5px;
-  display: inline-block;
-  background: rgba(63, 107, 135, 0.9);
-  line-height: normal;
-  border: none;
-  text-decoration: none;
-  color: #fff;
-  cursor: pointer;
-  font-size: 14px;
-  text-shadow: 0px 1px #000;
+#main {
+  height: 100%;
 }
 
 main {

@@ -1,0 +1,34 @@
+<header>
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <a ui-sref="dashboard">Рабочий стол</a>
+            &nbsp;/&nbsp;
+            <h1>Настройки</h1>
+
+            <span flex></span>
+        </div>
+    </md-toolbar>
+</header>
+
+<main role="main">
+    <div layout="row" layout-padding>
+        <div layout="column" flex-gt-sm="25" flex="100" class="md-whiteframe-5dp">
+            <md-toolbar layout="row" class="md-hue-1">
+                <div class="md-toolbar-tools">
+                    Мои кинотеатры
+                </div>
+            </md-toolbar>
+            <md-list-item ng-repeat="cinema in settings.cinemas" ui-sref="planning({cinemaId: cinema.id})">
+                <p>{{ cinema.name }}</p>
+                <md-icon md-font-set="fa" aria-label="Cinema settings" class="md-secondary fa-2x fa-gear" ng-click="editCinema(cinema)">
+                    <md-tooltip md-direction="right">Настройки</md-tooltip>
+                </md-icon>
+                <md-divider ng-if="!$last"></md-divider>
+            </md-list-item>
+            <md-button class="md-raised md-primary md-hue-1" ng-click="settings.addCinema()">
+                <md-icon md-font-set="fa" class="fa fa-lg fa-plus-circle"></md-icon>
+                Добавить кинотеатр
+            </md-button>
+        </div>
+    </div>
+</main>

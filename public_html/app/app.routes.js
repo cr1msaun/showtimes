@@ -10,6 +10,23 @@
         $urlRouterProvider.otherwise("/");
 
         $stateProvider
+            .state('dashboard', {
+                url: "/",
+                templateUrl: "/app/views/dashboard.html",
+                controller: 'DashboardCtrl as dashboard'
+            })
+            
+            .state('settings', {
+                url: "/settings",
+                templateUrl: "/app/views/settings.html",
+                controller: 'SettingsCtrl as settings',
+                resolve: {
+                    cinemas: function($stateParams, CinemaSvc) {
+                        return CinemaSvc.list().$promise;
+                    }
+                }
+            })
+            
             .state('planning', {
                 url: "/:cinemaId?date",
                 params: {date: null},

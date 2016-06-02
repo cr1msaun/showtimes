@@ -9,6 +9,17 @@
 
     function CinemaSvc($resource) {
         return $resource('/cinema/:slug', {}, {
+            list: {
+                method: 'GET',
+                isArray: true,
+                headers : {'Content-Type': 'application/json'},
+                withCredentials : true,
+                interceptor : {
+                    response: function (response) {
+                        return response.data;
+                    }
+                }
+            },
 
             get: {
                 method: 'GET',

@@ -29,25 +29,7 @@
     <script src="/bower_components/moment/min/moment.min.js"></script>
 </head>
 <body ng-app="app" ng-controller="AppCtrl as app">
-    <header>
-        <md-toolbar>
-            <div class="md-toolbar-tools">
-                <h1>@{{ app.title }}</h1>
-                <span flex></span>
-                <md-datepicker ng-model="app.date" md-placeholder="Выберите дату" ng-change="app.changeDate(app.date)"></md-datepicker>
-                <md-button class="md-raised" ng-click="app.saveShowtimes()">
-                    Сохранить
-                    <md-icon md-font-set="fa" class="fa fa-lg fa-floppy-o"></md-icon>
-                </md-button>
-                <md-button class="md-raised" ng-click="app.downloadShowtimes(app.date)">
-                    Скачать
-                    <md-icon md-font-set="fa" class="fa fa-lg fa-download"></md-icon>
-                </md-button>
-            </div>
-        </md-toolbar>
-    </header>
-
-    <main ui-view></main>
+    <div id="main" ui-view></div>
 
     <script src="/app/app.js"></script>
     <script src="/app/app.routes.js"></script>
@@ -61,6 +43,8 @@
 
     <!-- Controllers -->
     <script src="/app/controllers/AppCtrl.js"></script>
+    <script src="/app/controllers/DashboardCtrl.js"></script>
+    <script src="/app/controllers/SettingsCtrl.js"></script>
     <script src="/app/controllers/PlanningCtrl.js"></script>
     <script src="/app/controllers/AddMovieCtrl.js"></script>
 
