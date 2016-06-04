@@ -14,7 +14,7 @@
     <table class="table table-striped table-bordered table-condensed">
         <tr class="odd">
             <td colspan="6" class="head">
-                {{ $hall->name }} ({{ $hall->note }})
+                {{ $hall->name }} @if ($hall->note)({{ $hall->note }})@endif
             </td>
         </tr>
         <tr>
