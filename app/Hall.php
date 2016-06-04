@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Hall extends Model
 {
-    protected $fillable = ['cinema_id', 'name', 'note'];
+    protected $fillable = ['cinema_id', 'name'];
 
     public function user()
     {

@@ -66,6 +66,48 @@
                             </div>
                         </div>
 
+                        <div class="form-group{{ $errors->has('cinema_name') ? ' has-error' : '' }}">
+                            <label class="col-md-4 control-label">Cinema name</label>
+
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" name="cinema_name" value="{{ old('cinema_name') }}">
+
+                                @if ($errors->has('cinema_name'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('cinema_name') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('cinema_city') ? ' has-error' : '' }}">
+                            <label class="col-md-4 control-label">Cinema city</label>
+
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" name="cinema_city" value="{{ old('cinema_city') }}">
+
+                                @if ($errors->has('cinema_city'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('cinema_city') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('halls_count') ? ' has-error' : '' }}">
+                            <label class="col-md-4 control-label">Halls count</label>
+
+                            <div class="col-md-6">
+                                <input type="number" class="form-control" name="halls_count" value="{{ old('halls_count') }}">
+
+                                @if ($errors->has('halls_count'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('halls_count') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">

@@ -5,9 +5,9 @@
         .module('app')
         .controller('PlanningCtrl', PlanningCtrl);
 
-    PlanningCtrl.$inject = ['$scope', '$stateParams', '$state', '$mdBottomSheet', 'PlanningSvc', 'cinema', 'movies'];
+    PlanningCtrl.$inject = ['$scope', '$stateParams', '$state', '$mdBottomSheet', '$mdToast', 'PlanningSvc', 'cinema', 'movies'];
     
-    function PlanningCtrl($scope, $stateParams, $state, $mdBottomSheet, PlanningSvc, cinema, movies) {
+    function PlanningCtrl($scope, $stateParams, $state, $mdBottomSheet, $mdToast, PlanningSvc, cinema, movies) {
         var self = this;
 
         self.changeDate = changeDate;

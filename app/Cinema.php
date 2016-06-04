@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Cinema extends Model
 {
-    protected $fillable = ['user_id', 'name'];
+    protected $fillable = ['user_id', 'name', 'city'];
 
     public function user()
     {
