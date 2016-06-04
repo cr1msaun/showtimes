@@ -12,10 +12,11 @@
 */
 
 Route::get('/', 'HomeController@index');
+Route::get('api/logout', 'AppController@logout');
 
 Route::group(['prefix' => 'planning'], function () {
     Route::get('/', 'AppController@index');
-    Route::get('{any}', 'AppController@index')->where('any', '(.*)'); // pass a link to the Angular ui-router
+    Route::get('{any}', 'AppController@index')->where('any', '(.*)'); // pass uri to the Angular ui-router
 });
 
 Route::resource('cinema', 'CinemaController');

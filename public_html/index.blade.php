@@ -38,6 +38,7 @@
     <script src="/app/app.locale.js"></script>
 
     <!-- Services -->
+    <script src="/app/services/AppSvc.js"></script>
     <script src="/app/services/CinemaSvc.js"></script>
     <script src="/app/services/HallSvc.js"></script>
     <script src="/app/services/MovieSvc.js"></script>

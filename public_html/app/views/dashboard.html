@@ -6,8 +6,13 @@
             <span flex></span>
 
             <a ui-sref="settings">
-                <md-tooltip md-direction="left">Настройки</md-tooltip>
+                <md-tooltip>Настройки</md-tooltip>
                 <md-icon md-font-set="fa" class="fa-lg fa-gears"></md-icon>
+            </a>
+            &nbsp;&nbsp;&nbsp;
+            <a href="" ng-click="app.logout()">
+                <md-tooltip>Выход</md-tooltip>
+                <md-icon md-font-set="fa" class="fa-lg fa-sign-out"></md-icon>
             </a>
         </div>
     </md-toolbar>

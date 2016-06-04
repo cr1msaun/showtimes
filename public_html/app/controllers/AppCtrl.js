@@ -5,12 +5,16 @@
         .module('app')
         .controller('AppCtrl', AppCtrl);
     
-    AppCtrl.$inject = ['$scope', '$state', '$stateParams', '$mdToast', 'PlanningSvc'];
+    AppCtrl.$inject = ['$scope', 'AppSvc'];
     
-    function AppCtrl($scope, $state, $stateParams, $mdToast, PlanningSvc) {
+    function AppCtrl($scope, AppSvc) {
         var self = this;
 
+        self.logout = logout;
         
+        function logout() {
+            AppSvc.logout();
+        }
     }
     
 })();

@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
+use Auth;
 use App\Http\Requests;
+use Illuminate\Http\Request;
 
 class AppController extends Controller
 {
@@ -26,5 +26,10 @@ class AppController extends Controller
     public function index()
     {
         return view('index');
+    }
+
+    public function logout()
+    {
+        Auth::logout();
     }
 }
