@@ -5,6 +5,8 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
+
+                    @if (Auth::guest())
                     <div class="panel-heading">Login</div>
                     <div class="panel-body">
                         <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
@@ -59,6 +61,11 @@
                             </div>
                         </form>
                     </div>
+                    @else
+                        <div class="panel-body">
+                            <h2><a href="{{ url('/planning') }}">Перейти к созданию</a></h2>
+                        </div>
+                    @endif
                 </div>
             </div>
         </div>
