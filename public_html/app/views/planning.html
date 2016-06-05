@@ -23,6 +23,12 @@
 <main role="main">
     <div class="sidebar">
         <div class="movie-list" layout="column">
+            <md-card ng-if="planning.movies.length == 0">
+                <md-card-content>
+                    Список ваших фильмов пуст. Добавьте фильм, чтобы начать
+                </md-card-content>
+            </md-card>
+
             <movie ng-repeat="movie in planning.movies" m-id="{{ movie.id }}" name="{{ movie.name }}" duration="{{ movie.default_duration }}"></movie>
 
             <md-button class="md-raised md-primary" ng-click="planning.showMovieForm()">

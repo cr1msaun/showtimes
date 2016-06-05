@@ -1,5 +1,5 @@
 (function () {
-    "use strict";
+    'use strict';
 
     angular
         .module('app')
@@ -7,37 +7,42 @@
 
     function configRoutes($stateProvider, $urlRouterProvider, $locationProvider) {
 
-        $urlRouterProvider.otherwise("/");
+        $urlRouterProvider.otherwise('/');
 
         $stateProvider
             .state('dashboard', {
-                url: "/",
-                templateUrl: "/app/views/dashboard.html",
-                controller: 'DashboardCtrl as dashboard'
+                url: '/',
+                templateUrl: '/app/views/dashboard.html',
+                controller: 'DashboardCtrl as dashboard',
+                resolve: {
+                    cinemas: function(CinemaSvc) {
+                        return CinemaSvc.list().$promise;
+                    }
+                }
             })
             
             .state('settings', {
-                url: "/settings",
-                templateUrl: "/app/views/settings.html",
+                url: '/settings',
+                templateUrl: '/app/views/settings.html',
                 controller: 'SettingsCtrl as settings',
                 resolve: {
-                    cinemas: function($stateParams, CinemaSvc) {
+                    cinemas: function(CinemaSvc) {
                         return CinemaSvc.list().$promise;
                     }
                 }
             })
             
             .state('planning', {
-                url: "/:cinemaId?date",
+                url: '/:cinemaId?date',
                 params: {date: null},
-                templateUrl: "/app/views/planning.html",
+                templateUrl: '/app/views/planning.html',
                 controller: 'PlanningCtrl as planning',
                 resolve: {
                     cinema: function($stateParams, CinemaSvc) {
                         return CinemaSvc.get({slug: $stateParams.cinemaId, date: $stateParams.date}).$promise;
                     },
 
-                    movies: function($stateParams, MovieSvc) {
+                    movies: function(MovieSvc) {
                         return MovieSvc.list().$promise;
                     }
                 }

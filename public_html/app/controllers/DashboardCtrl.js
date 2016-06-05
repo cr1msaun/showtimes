@@ -5,11 +5,12 @@
         .module('app')
         .controller('DashboardCtrl', DashboardCtrl);
 
-    DashboardCtrl.$inject = ['$scope'];
+    DashboardCtrl.$inject = ['$scope', 'cinemas'];
     
-    function DashboardCtrl($scope) {
+    function DashboardCtrl($scope, cinemas) {
         var self = this;
-        
+
+        self.cinemas = cinemas;
     }
     
 })();

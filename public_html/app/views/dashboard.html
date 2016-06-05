@@ -5,11 +5,11 @@
 
             <span flex></span>
 
-            <a ui-sref="settings">
-                <md-tooltip>Настройки</md-tooltip>
-                <md-icon md-font-set="fa" class="fa-lg fa-gears"></md-icon>
-            </a>
-            &nbsp;&nbsp;&nbsp;
+            <!--<a ui-sref="settings">-->
+                <!--<md-tooltip>Настройки</md-tooltip>-->
+                <!--<md-icon md-font-set="fa" class="fa-lg fa-gears"></md-icon>-->
+            <!--</a>-->
+            <!--&nbsp;&nbsp;&nbsp;-->
             <a href="" ng-click="app.logout()">
                 <md-tooltip>Выход</md-tooltip>
                 <md-icon md-font-set="fa" class="fa-lg fa-sign-out"></md-icon>
@@ -19,5 +19,19 @@
 </header>
 
 <main role="main">
+    <div layout-padding>
+        <h2>Нажмите на название вашего кинотеатра для росписи</h2>
 
+        <div layout="column" flex-gt-sm="25" flex="100" class="md-whiteframe-5dp">
+            <md-toolbar layout="row" class="md-hue-1">
+                <div class="md-toolbar-tools">
+                    Мои кинотеатры
+                </div>
+            </md-toolbar>
+            <md-list-item ng-repeat="cinema in dashboard.cinemas" ui-sref="planning({cinemaId: cinema.id})">
+                <p>{{ cinema.name }}</p>
+                <md-divider ng-if="!$last"></md-divider>
+            </md-list-item>
+        </div>
+    </div>
 </main>

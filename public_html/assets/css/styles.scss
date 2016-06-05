@@ -182,6 +182,10 @@ hall-dropzone {
   border-left: none;
   transition: 0.3s;
 
+  &.droppable {
+    box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.5);
+  }
+
   &.dropzone-mod_active {
     background: #b1c4ce url(../img/dropzone.gif) repeat-x;
   }

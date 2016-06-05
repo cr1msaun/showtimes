@@ -133,6 +133,8 @@ hall-dropzone {
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-left: none;
   transition: 0.3s; }
+  hall-dropzone.droppable {
+    box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.5); }
   hall-dropzone.dropzone-mod_active {
     background: #b1c4ce url(../img/dropzone.gif) repeat-x; }
   hall-dropzone .showtime {

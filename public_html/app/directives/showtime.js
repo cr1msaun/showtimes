@@ -41,6 +41,8 @@
 
                 /* ===== INTERNAL METHODS ===== */
                 function draggingFromSidebar(event) {
+                    highlightDropzones();
+
                     moveElement(event);
 
                     let dropzone = isOverHallDropzone(event);
@@ -67,15 +69,16 @@
 
                     $document.off('mousemove');
                     showtime.off('mouseup');
+
+                    removeHighlightDropzone();
                 }
-
-
 
                 function setDuration(newDuration) {
                     showtime[0].querySelector('.showtime').style.width = newDuration * 2 + 'px';
                 }
 
                 function dragWithinDropzone(event) {
+                    removeHighlightDropzone();
                     showtime.addClass('dragging');
 
                     scope.$watch(function() {
@@ -141,6 +144,21 @@
                     }
 
                     return elem.closest('hall-dropzone');
+                }
+
+                function highlightDropzones() {
+                    let dropzones = angular.element(document.querySelectorAll('hall-dropzone'));
+
+                    angular.forEach(dropzones, function (zone) {
+                        //console.log(zone);
+                       if (zone.querySelectorAll('showtime').length == 0) {
+                            zone.classList.add('droppable');
+                       }
+                    });
+                }
+
+                function removeHighlightDropzone() {
+                    angular.element(document.querySelectorAll('hall-dropzone')).removeClass('droppable');
                 }
 
                 function setPositionByTime(time) {
