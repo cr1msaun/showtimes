@@ -71,6 +71,17 @@ movie {
   border: 1px solid rgba(0, 0, 0, 0.3);
   box-shadow: 0 2px 4px -1px rgba(0,0,0,.2),0 4px 5px 0 rgba(0,0,0,.14),0 1px 10px 0 rgba(0,0,0,.12);
 
+  .movie {
+    border-radius: 5px;
+  }
+
+  &.dragging .movie {
+    cursor: move; /* fallback if grab cursor is unsupported */
+    cursor: grabbing;
+    cursor: -moz-grabbing;
+    cursor: -webkit-grabbing;
+  }
+
   md-input-container {
     margin: 8px 0;
   }
@@ -81,21 +92,26 @@ movie {
 
 }
 
+// TODO: rename
 .movie, .showtime {
   width: 227px;
   height: 40px;
   padding: 0 5px;
   font-size: 14px;
-  cursor: move;
   position: relative;
   display: table-cell;
   vertical-align: middle;
   background: rgb(63,81,181);
   color: #fff;
   font-weight: bold;
+  cursor: move; /* fallback if grab cursor is unsupported */
+  cursor: grab;
+  cursor: -moz-grab;
+  cursor: -webkit-grab;
 
   &:after {
-    content: '>';
+    content: '\f101';
+    font: 14px/1 FontAwesome;
     display: block;
     position: absolute;
     top: 50%;
@@ -191,10 +207,6 @@ showtime {
   position: absolute;
   z-index: 60;
 
-  hall-dropzone & {
-    top: 0px !important;
-  }
-
   .showtime {
     float: left;
     padding: 0;
@@ -244,6 +256,10 @@ showtime {
     }
   }
 
+  &.dragging .showtime {
+    cursor: ew-resize;
+  }
+
   break {
     background: rgba(236, 240, 243, 0.9);
     color: #000;
@@ -254,5 +270,10 @@ showtime {
     font-size: 12px;
     cursor: ew-resize;
     text-align: center;
+  }
+
+  // Opera fix
+  hall-dropzone & {
+    top: 0px !important;
   }
 }

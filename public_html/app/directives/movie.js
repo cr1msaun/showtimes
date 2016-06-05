@@ -25,26 +25,27 @@
                 /* ===== INTERNAL METHODS ===== */
                 function dragStart(event) {
                     if (event.which != 1) return;
+
                     event.preventDefault();
 
                     scope.break = calcBreak(scope.duration);
 
                     let showtime = createShowtime(scope.mId, scope.name, scope.duration, scope.format, scope.break);
 
-                    element.parent().append(showtime);
+
+                    document.querySelector('#main').appendChild(showtime[0]);
                     $compile(showtime)(scope);
                 }
 
                 function createShowtime(mId, name, duration, format, breakTime) {
-                    let showtime = angular.element(`<showtime dragging-from-sidebar
-                                                              m-id="${mId}"
-                                                              name="${name}"
-                                                              duration="${duration}"
-                                                              format="${format}"
-                                                              break="${breakTime}">
-                                                    </showtime>`);
-
-                    return showtime;
+                    return angular.element(`<showtime class="dragging"
+                                                      dragging-from-sidebar
+                                                      m-id="${mId}"
+                                                      name="${name}"
+                                                      duration="${duration}"
+                                                      format="${format}"
+                                                      break="${breakTime}">
+                                            </showtime>`);
                 }
 
                 function calcBreak(duration) {

@@ -76,6 +76,8 @@
                 }
 
                 function dragWithinDropzone(event) {
+                    showtime.addClass('dragging');
+
                     scope.$watch(function() {
                             return showtime.css('left');
                         },
@@ -111,6 +113,8 @@
 
                         $document.off('mousemove');
                         showtime.off('mouseup');
+
+                        showtime.removeClass('dragging');
                     });
                 }
 
